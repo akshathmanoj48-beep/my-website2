@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+    <style>
+      body {
+        background: #111;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .loader {
+        border: 6px solid #333;
+        border-top: 6px solid cyan;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 10px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+    <p id="message">Please wait...</p>
+
+    <script>
+      const messages = [
+        "Connecting tracks...",
+        "Switching signals...",
+        "Warming up the engines...",
+        "Calibrating systems...",
+        "Checking passenger list… yes, you’re on board!",
+        "Brakes released… accelerating through the network!",
+        "Brakes released… accelerating through the network!",
+        "Still faster than Indian Railways IRCTC!",
+        "Hold tight! The bits are aligning.",
+      ];
+
+      // Pick random message
+      document.getElementById("message").textContent =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      // Get next page from sessionStorage
+      const nextPage = sessionStorage.getItem("nextPage");
+
+      // Redirect after delay
+      setTimeout(() => {
+        if (nextPage) {
+          window.location.href = nextPage;
+        } else {
+          window.location.href = "index.html";
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>

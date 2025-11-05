@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css4.css" />
+  </head>
+  <body>
+    <div id="reg">
+      <form id="registerForm">
+        <input type="email" class="reg" required placeholder="Email" />
+        <input
+          type="text"
+          class="reg"
+          name="username"
+          id="userName"
+          required
+          placeholder="Username"
+        />
+        <input
+          type="password"
+          class="reg"
+          id="password"
+          required
+          placeholder="Password"
+        />
+        <button
+          onclick="alert('You have registered successfully!'); window.location.href='index2.html';"
+          id="btn"
+        >
+          REGISTER
+        </button>
+      </form>
+    </div>
+  </body>
+  <script>
+    document.getElementById("btn").addEventListener("click", function () {
+      alert("You have registered successfully!");
+      window.location.href = "index2.html";
+    });
+  </script>
+</html>
